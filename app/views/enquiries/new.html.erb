@@ -1,0 +1,18 @@
+<% if @enquiry.errors.any? %>
+  <% @enquiry.errors.full_messages.each do |msg| %>
+    <%= msg %><br/>
+  <% end %>
+<% end %>
+
+
+<%= form_for @enquiry do |f| %>
+  <p>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <%= f.submit 'Send' %>
+<% end %>
